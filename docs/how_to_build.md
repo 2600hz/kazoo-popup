@@ -11,7 +11,13 @@ KazooPopup - How to build
 
 ## Using QtCreator
 
-Just open `KazooPopup.pro` file and press 'Build'.
+1) Build quazip library `autoupdater/3rdparty/quazip/src/quazip.pro` (see [how_to_build][how_to_build_quazip])
+
+2) Copy library to `autoupdater/3rdparty/quazip/lib`
+
+3) Build autoupdater application `autoupdater/autoupdater.pro`
+
+4) Build KazooPopup application `KazooPopup.pro`
 
 ## Using terminal
 
@@ -20,7 +26,9 @@ Just open `KazooPopup.pro` file and press 'Build'.
             1) Set Qt environment: run $$QT_DIR\bin\qtenv2.bat 
                 e.g. c:\Qt\Qt5.3.1\5.3\mingw482_32\bin\qtenv2.bat
 				
-			2) Build quazip library (see [how_to_build][how_to_build_quazip])
+			2) Build quazip library
+				qmake quazip.pro
+				mingw32-make -jN* release
 			
 			3) Build autoupdater application
 				qmake autoupdater.pro
@@ -35,7 +43,9 @@ Just open `KazooPopup.pro` file and press 'Build'.
             1) Set Qt environment: export PATH=$QT_DIR/bin:$PATH
                 e.g. export PATH=/Users/Alex/Qt5.3.0/5.3/clang_64/bin:$PATH
 				
-			2) Build quazip library (see [how_to_build][how_to_build_quazip])
+			2) Build quazip library
+				qmake quazip.pro
+				make -jN*
 			
 			3) Build autoupdater application
 				qmake autoupdater.pro
